@@ -1,9 +1,25 @@
 .song-container{
-    min-height: 60vh;
-    background-color: aquamarine;
+    min-height: 65vh;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 3px;
     justify-content: space-evenly;
     align-items: center;
+    img{
+        max-height: 45vh;
+        border-radius: 100%;
+    }
 }
+.rotate {
+    animation: rotation 8s infinite linear;
+  }
+  
+@keyframes rotation {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+}
+  

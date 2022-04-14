@@ -1,17 +1,11 @@
 import React from 'react'
 
-function Song() {
-  async function getmusic(){
-    let music = await fetch("https://theaudiodb.com/api/v1/json/2/album.php?i=112024")
-        .then(response => response.json())
-        .then(data => data)
-    console.log(music)
-} 
+function Song({currentSong, isPlaying ,songInfo}) { 
   return (
     <div className='song-container'>
-      <h1 onClick={getmusic}>Song img</h1>
-      <h1>song name</h1>
-      <h1>Artist</h1>
+      <img className={(isPlaying && songInfo.duration)?"rotate":""} src={currentSong.cover} alt='Song-cover' />
+      <h2>{currentSong.name}</h2>
+      <h3>{currentSong.artist}</h3>
     </div>
   )
 }
